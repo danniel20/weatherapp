@@ -1,0 +1,65 @@
+.weather-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 35px;
+}
+
+.city-info .city-name {
+    font-weight: 600;
+}
+
+.temperature-info {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.conditions-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.conditions-info .condition {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.conditions-details {
+    display: flex;
+    gap: 15px;
+
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.conditions-details .humidity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.conditions-details .wind {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.conditions-details .vertical-line {
+    transform: scaleY(2);
+}

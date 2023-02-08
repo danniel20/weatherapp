@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: 100vh;
+
+  color: #ffffff;
+  background: #020024;
+  background: linear-gradient(180deg, #020024 0%, #5555eb 1%, #3e4bb5 86%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-card-data {
+  background: #002224;
+  background: linear-gradient(37deg, #002224 0%, #f1f1f1fb 0%, #3845a1 0%);
+
+  border: 1px solid #f8f3f3;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px -6px #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  padding: 30px;
+}
+
+.weather-card-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather-card-form-container .text-label {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.weather-card-form-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+input {
+  width: 250px;
+  height: 37px;
+
+  border: none;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+button {
+  min-width: 50px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #8dd0f5;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.fa-solid {
+  font-weight: 900;
+}
+
+.error {
+  color: #ff0000;
+  font-weight: bold;
+}
+
