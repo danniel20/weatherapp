@@ -17,35 +17,35 @@ const App = () => {
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    fetchData(city)
-      .then((result) => {
-        if (result.cod == '404') {
-          setError('Cidade não encontrada!');
-          setIsVisible(false);
-          setCity('');
-          return;
-        }
+    try {
+      const result = await fetchData(city);
 
-        const dataApi = {
-          name: result.name,
-          temperature: result.main.temp,
-          humidity: result.main.humidity,
-          condition: result.weather[0].description,
-          country: result.sys.country.toLowerCase(),
-          windSpeed: result.wind.speed,
-          icon: result.weather[0].icon,
-        };
-
-        setWeatherData(dataApi);
-        setIsVisible(true);
-        setCity('');
-        setError('');
-      })
-      .catch((erro) => {
-        setError('Erro inesperado: ' + erro);
+      if (result.cod == '404') {
+        setError('Cidade não encontrada!');
         setIsVisible(false);
         setCity('');
-      });
+        return;
+      }
+
+      const dataApi = {
+        name: result.name,
+        temperature: result.main.temp,
+        humidity: result.main.humidity,
+        condition: result.weather[0].description,
+        country: result.sys.country.toLowerCase(),
+        windSpeed: result.wind.speed,
+        icon: result.weather[0].icon,
+      };
+
+      setWeatherData(dataApi);
+      setIsVisible(true);
+      setCity('');
+      setError('');
+    } catch (erro) {
+      setError('Erro inesperado: ' + erro);
+      setIsVisible(false);
+      setCity('');
+    }
   };
 
   return (
