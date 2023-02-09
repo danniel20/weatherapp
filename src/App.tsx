@@ -19,7 +19,7 @@ const App = () => {
 
     fetchData(city)
       .then((result) => {
-        if (result.code == '404') {
+        if (result.cod == '404') {
           setError('Cidade não encontrada!');
           setIsVisible(false);
           setCity('');
