@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meudeployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: weatherapp
+          image: danniel20/weatherapp
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weatherapp-service
+spec:
+  selector:
+    app: web
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: weatherapp-service
+                port:
+                  number: 80
+
+### 1) Usando k3d para criar cluster kubernetes com service loadbalance
+###    e mapea a porta interna do container para acesso externo. Ex: http://localhost:8081
+
+# k3d cluster create meucluster -p "8081:80@loadbalancer"
+
+### 2) Aplica as configurações do arquivo para o cluster
+
+# kubectl apply -f deployment.yml
