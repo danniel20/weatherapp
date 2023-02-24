@@ -18,8 +18,8 @@ yarn serve
 
 The backend is available at `http://localhost:3000`.
 
-## Using Docker
+## Or using Docker
 
 ```bash
-docker run -d -p 3000:3000 danniel20/weatherapp
+docker compose up -d
 ```

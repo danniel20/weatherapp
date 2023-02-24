@@ -10,5 +10,5 @@ WORKDIR /app
 RUN yarn global add serve
 COPY --from=appbuild /app/dist ./dist
 EXPOSE 3000
-CMD ["serve", "-s", "dist", "-p", "3000"]
+ENTRYPOINT ["serve", "-s", "dist", "-p", "3000"]
 
