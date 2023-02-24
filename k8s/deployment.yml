@@ -15,6 +15,7 @@ spec:
       containers:
         - name: weatherapp
           image: danniel20/weatherapp
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
 
@@ -58,3 +59,8 @@ spec:
 ### 2) Aplica as configurações do arquivo para o cluster
 
 # kubectl apply -f deployment.yml
+
+### 3) Atualizando cluster quando uma nova atualização na imagem
+
+# adcionar a linha "imagePullPolicy: Always" ao container e após atualização da imagem executar o comando:
+# kubectl rollout restart deploy <NAME-DEPLOYMENT>
