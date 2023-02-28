@@ -16,7 +16,7 @@ yarn install
 yarn dev
 ```
 
-The backend is available at `http://localhost:5173`.
+The application is available at `http://localhost:5173`.
 
 ## Using Docker
 
@@ -24,4 +24,4 @@ The backend is available at `http://localhost:5173`.
 docker compose up -d
 ```
 
-The backend is available at `http://localhost:3000`.
+The application is available at `http://localhost:3000`.
