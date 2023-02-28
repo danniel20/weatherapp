@@ -13,12 +13,12 @@ cd weatherapp
 yarn install
 
 # run the project
-yarn serve
+yarn dev
 ```
 
 The backend is available at `http://localhost:3000`.
 
-## Or using Docker
+## Using Docker
 
 ```bash
 docker compose up -d
