@@ -40,6 +40,11 @@ metadata:
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  defaultBackend:
+    service:
+      name: weatherapp-service
+      port:
+        number: 80
   rules:
     - http:
         paths:
